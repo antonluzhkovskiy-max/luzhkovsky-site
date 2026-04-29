@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Большая Дача — дизрапт-выезд для команд</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gd:#1e3a2f;--gl:#4a7c5e;--cr:#f4f0e6;--cd:#e4dece;--te:#c0633a;--tl:#e8845d;--ink:#1a1a18;--im:#4a4a44;--il:#8a8a80;--wh:#ffffff}
+body{font-family:'Manrope',sans-serif;background:var(--cr);color:var(--ink);line-height:1.65}
+.hdr{background:var(--gd);color:var(--cr);padding:5rem 2rem 4.5rem}
+.hi{max-width:800px;margin:0 auto}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--tl);border:1px solid var(--tl);padding:4px 13px;border-radius:2px;margin-bottom:2rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:700;line-height:1.14;color:var(--cr);margin-bottom:1.4rem}
+h1 em{font-style:italic;color:var(--tl)}
+.sub{font-size:1.1rem;color:rgba(244,240,230,.70);max-width:560px;line-height:1.7}
+section{padding:4rem 2rem;border-bottom:1px solid var(--cd)}
+section:last-child{border-bottom:none}
+.si{max-width:800px;margin:0 auto}
+.sl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gl);margin-bottom:1.2rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;line-height:1.22;color:var(--gd);margin-bottom:1.2rem}
+h3{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:.45rem}
+p{font-size:1rem;color:var(--im);margin-bottom:.9rem;line-height:1.65}
+p:last-child{margin-bottom:0}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--cd);border:1px solid var(--cd);border-radius:8px;overflow:hidden;margin-top:2rem}
+.pi{background:var(--cr);padding:1.5rem}
+.utp{background:var(--gd)}
+.utp h2{color:var(--cr)}.utp .sl{color:var(--tl)}.utp p{color:rgba(244,240,230,.72)}
+.us{font-size:1.15rem;font-weight:500;color:var(--cr);line-height:1.62;margin-bottom:2rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(244,240,230,.14)}
+.us strong{color:var(--tl);font-weight:600}
+.et{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,240,230,.38);margin-bottom:1.2rem}
+.er{display:grid;grid-template-columns:1fr 28px 1fr;gap:8px;align-items:center;margin-bottom:8px}
+.eb{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:5px;padding:9px 11px;font-size:.88rem;color:rgba(244,240,230,.60);line-height:1.45}
+.ed{background:rgba(192,99,58,.17);border:1px solid rgba(232,132,93,.28);border-radius:5px;padding:9px 11px;font-size:.88rem;color:rgba(244,240,230,.84);line-height:1.45}
+.ar{text-align:center;color:rgba(244,240,230,.25)}
+.un{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(244,240,230,.11);font-size:.88rem;color:rgba(244,240,230,.42);line-height:1.55}
+.steps{margin-top:1.8rem}
+.step{display:grid;grid-template-columns:52px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid var(--cd)}
+.step:last-child{border-bottom:none}
+.sn{width:38px;height:38px;border-radius:50%;background:var(--gd);color:var(--cr);font-size:.85rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sd{font-size:11px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;color:var(--te);margin-bottom:.35rem}
+.dlv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.8rem}
+.dc{background:var(--wh);border:1px solid var(--cd);border-radius:8px;padding:1.25rem}
+.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1.8rem}
+.ac{border-left:3px solid var(--gl);padding:1rem 1.25rem;background:var(--wh);border-radius:0 6px 6px 0}
+.ac h3{color:var(--gd);margin-bottom:.35rem}
+.nf{margin-top:1.8rem;padding:1.2rem 1.4rem;border:1px solid var(--cd);border-radius:6px;background:var(--cd)}
+.nf p{font-size:.9rem;color:var(--il)}
+.cta{background:var(--te);text-align:center;padding:5rem 2rem}
+.cta h2{color:var(--cr);margin-bottom:1rem}
+.cta .sl{color:rgba(244,240,230,.50)}
+.cta p{color:rgba(244,240,230,.80);max-width:500px;margin:0 auto 2rem}
+.btn{display:inline-block;background:var(--cr);color:var(--te);font-weight:600;font-size:.95rem;padding:1rem 2.5rem;border-radius:4px;text-decoration:none}
+.cf{margin-top:1.5rem;font-size:.82rem;color:rgba(244,240,230,.42)}
+footer{background:#1a1a18;color:rgba(244,240,230,.38);padding:1.6rem 2rem;text-align:center;font-size:.82rem}
+@media(max-width:600px){.er{grid-template-columns:1fr}section{padding:3rem 1.25rem}.hdr{padding:3.5rem 1.25rem 3rem}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="hi">
+<span class="tag">Дизрапт-выезд · MVP</span>
+<h1>Дача, где команды<br><em>находят выход</em><br>из тупика</h1>
+<p class="sub">Трёхдневный иммерсивный выезд для продуктовых и управленческих команд. Настоящая дача. Настоящая работа. Настоящий прорыв — или возвращаем деньги.</p>
+</div></header>
+<section><div class="si">
+<p class="sl">Проблема</p>
+<h2>Стратсессии перестали работать</h2>
+<p>Красивые слайды, модный коттедж, мозговой штурм с маркерами — и через месяц всё возвращается на круги своя. Команда снова в том же тупике.</p>
+<div class="pg">
+<div class="pi"><h3>Застряли на одной отметке</h3><p>Продукт не растёт. Все понимают, что нужен прорыв — но непонятно, откуда его брать.</p></div>
+<div class="pi"><h3>Решения не внедряются</h3><p>Договорились на сессии, расписали шаги — и ничего. Все вернулись в операционку.</p></div>
+<div class="pi"><h3>Команда тянет в разные стороны</h3><p>Формально все за одно, а на деле каждый гребёт своё. Конфликт не проговорён — не решён.</p></div>
+</div>
+</div></section>
+<section class="utp"><div class="si">
+<p class="sl">Наш подход</p>
+<h2>Мы переводим вашу задачу на дачный язык</h2>
+<p class="us">Каждая ваша бизнес-задача получает <strong>дачную метафору</strong> — конкретную, физическую, понятную без MBA. Команда решает её руками. Потом переносит опыт обратно в бизнес.</p>
+<p class="et">Как это выглядит на практике</p>
+<div class="er"><div class="eb">Конкурент забирает долю рынка, а мы не можем ответить</div><div class="ar">→</div><div class="ed">Мерзкие соседи воруют воду из вашего колодца. Три часа, чтобы закрыть им доступ</div></div>
+<div class="er"><div class="eb">Продукт застрял, нужна прорывная идея — мозговые штурмы дают одно и то же</div><div class="ar">→</div><div class="ed">Оросить весь участок из того, что найдёте в сарае. Час, восемь человек</div></div>
+<div class="er"><div class="eb">Команда не договаривается: каждый тянет в свою сторону</div><div class="ar">→</div><div class="ed">Заготовить дрова до темноты. Двадцать человек. Разные роли. Один результат</div></div>
+<p class="un">Никакой геймификации. Никаких ролевых игр ради «командообразования». Только реальная работа, реальные решения — и дебриф, который переводит опыт в бизнес-контекст.</p>
+</div></section>
+<section><div class="si">
+<p class="sl">Как это работает</p>
+<h2>Четыре шага от звонка до результата</h2>
+<div class="steps">
+<div class="step"><div class="sn">01</div><div><p class="sd">1–2 дня · до выезда</p><h3>Диагностика</h3><p>Разговариваем с ключевыми людьми команды. Формулируем невыполнимую задачу. Фиксируем болевые точки, конфликты, застрявшие процессы.</p></div></div>
+<div class="step"><div class="sn">02</div><div><p class="sd">3–4 дня · до выезда</p><h3>Сценарий под вашу ситуацию</h3><p>Пишем дачный сценарий: задачи, последовательность, роли. Используем ИИ для ускорения. Никаких шаблонов — каждый сценарий уникален.</p></div></div>
+<div class="step"><div class="sn">03</div><div><p class="sd">3 дня · на даче</p><h3>Выезд</h3><p><strong>День 1</strong> — вход в контекст, первые задачи. <strong>День 2</strong> — ключевые сценарии, выход за границы ролей. <strong>День 3</strong> — дебриф, перенос, конкретный план с ответственными.</p></div></div>
+<div class="step"><div class="sn">04</div><div><p class="sd">1–3 месяца · после выезда</p><h3>Сопровождение</h3><p>Проверяем через неделю, месяц и три месяца. Вы не остаётесь один на один с планом.</p></div></div>
+</div>
+</div></section>
+<section style="background:var(--wh)"><div class="si">
+<p class="sl">Результат</p>
+<h2>Что вы увозите с дачи</h2>
+<div class="dlv">
+<div class="dc"><h3>Решение вашей задачи</h3><p>Не «мы обсудили» — конкретный ответ на задачу, проверенный в действии, не на бумаге.</p></div>
+<div class="dc"><h3>План внедрения</h3><p>Карта решений с ответственными и сроками. Первые шаги — до того, как команда разъехалась.</p></div>
+<div class="dc"><h3>Договорённости, которые держатся</h3><p>Конфликты проговорены. Роли перераспределены. Принципы прожиты, а не просто записаны.</p></div>
+<div class="dc"><h3>Общий язык команды</h3><p>Метафора, которая остаётся и помогает говорить о прорывах.</p></div>
+</div>
+</div></section>
+<section><div class="si">
+<p class="sl">Для кого</p>
+<h2>Кому это нужно</h2>
+<div class="ag">
+<div class="ac"><h3>Продуктовые команды</h3><p>Продукт застрял. Нужна прорывная идея. Мозговые штурмы дают одно и то же.</p></div>
+<div class="ac"><h3>Управленческие команды</h3><p>Нужно договориться о стратегии или разрядить хронический конфликт.</p></div>
+<div class="ac"><h3>Партнёрские команды</h3><p>Нужно синхронизироваться и выстроить новый формат работы.</p></div>
+<div class="ac"><h3>Команды в точке роста</h3><p>Всё хорошо — но хочется выйти на следующий уровень.</p></div>
+</div>
+<div class="nf"><p><strong>Не наш формат</strong> — если вам нужен корпоратив ради корпоратива или сессия для видимости участия.</p></div>
+</div></section>
+<section class="cta"><div class="si">
+<p class="sl">Следующий шаг</p>
+<h2>Хотите посмотреть, как это выглядит для вашей задачи?</h2>
+<p>Расскажите нам о вашей невыполнимой задаче — мы за 30 минут покажем, как она может выглядеть в дачном сценарии. Бесплатно, без обязательств.</p>
+<a href="https://luzhkovsky.ru/#contact" class="btn">Запросить бесплатную диагностику</a>
+<p class="cf">30 минут · онлайн или вживую · без обязательств</p>
+</div></section>
+<footer>Большая Дача · Иммерсивные бизнес-выезды · Санкт-Петербург и область</footer>
+</body></html>
